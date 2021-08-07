@@ -28,15 +28,42 @@
 class Card {
 public:
 
-    const char* const RANK_ZERO = "zero";
-    const char* const RANK_ONE = "one";
-    const char* const RANK_TWO = "two";
-    const char* const RANK_THREE = "three";
-    const char* const RANK_FOUR = "four";
-    const char* const RANK_FIVE = "five";
-    const char* const RANK_SIX = "six";
-    const char* const RANK_SEVEN = "seven";
-    const char* const RANK_EIGHT = "eight";
-    const char* const RANK_NINE = "nine";
+    // returns color of the card if it has one or if it's wild
+    std::string getColor();
 
+    // returns card type; if it's a number, draw, reverse, or skip
+    std::string getType();
+
+    const char const *COLOR_CATEGORIES[5] = {
+        "Red",
+        "Blue",
+        "Green",
+        "Yellow",
+        "Wild"
+    };
+
+    const char const *TYPE_CATEGORIES[15] = {
+        "zero",
+        "one",
+        "two",
+        "three",
+        "four",
+        "five",
+        "six",
+        "seven",
+        "eight",
+        "nine",
+        "draw 2",
+        "reverse",
+        "skip",
+        "color change",
+        "draw 4"
+    };
+
+private:
+
+    // contains what color the card is or if it's a wild card
+    std::string color;
+    // contains what type it is
+    std::string number;
 };
